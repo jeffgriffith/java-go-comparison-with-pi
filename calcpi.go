@@ -20,6 +20,7 @@ func calcPiForTerms(start int, numElements int) chan float64 {
         }
 
         out <- accum
+        close(out)
     }()
 
     return out
@@ -36,6 +37,7 @@ func calculatePi(numWorkers int, elementsPerWorker int) chan float64 {
             channels = append(channels, c)
         }
         out <- sum(channels)
+        close(out)
     }()
 
     return out
