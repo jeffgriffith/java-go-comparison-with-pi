@@ -1,7 +1,7 @@
 /*
- * Compare to my Scala version using the actor model
- * https://prezi.com/4asyld78xkm6/actor-systems-with-akka/
- *
+ * This version shares a single output channel for all output
+ * calculation.
+ * 
  * PI/4 = 1/1 - 1/3 + 1/5 - 1/7 + 1/9 - ...
  */
 package main
