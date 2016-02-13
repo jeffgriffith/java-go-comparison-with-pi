@@ -53,10 +53,10 @@ func main() {
 
     start := time.Now()
 
-    piChan := calculatePi(numWorkers, elementsPerWorker)
+    pi := <-calculatePi(numWorkers, elementsPerWorker)
 
-    fmt.Printf("Pi is %.10f\n", <-piChan) // Synchronization here. No need for a latch.
     fmt.Printf("Elapsed time: %s\n", time.Since(start))
+    fmt.Printf("Pi is %.10f\n", pi)
 }
 
 ////////////////// Generic utilities
