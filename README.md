@@ -54,7 +54,7 @@ is produced asynchronously.
 The main program. Note that in calculating 10 billion terms,
 there is no doubt some over flow that limits the precision of the
 answer (to about 10 decimal points i think) but I don't think this
-matters in terms in terms of the calculation.
+matters in terms of the calculation.
 
 Note that the main contains the synchronization point for both
 implementations. The Java version blocks on the future calculation
