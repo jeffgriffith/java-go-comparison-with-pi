@@ -20,7 +20,14 @@ AND the simplicity of futures in one very simple abstraction.
 * I cheated considerably with helper fucntions to make the Java 8 look
 comparable in simplicity to go. It's clear that having concurrency
 front and center in the language design of Go makes it considerably
-more readable.
+more readable. Note also that while I wrote the Go code to look as
+similar as possible to the Java code, that made the Go implementation
+slightly larger than it needed to be because the functions return
+a separate channel for each result in the way that Java returns
+a separate future for each result. In Go, using a fan-in pattern,
+several workers can contribute to the same output channel with a
+single consumer reading the channel and summing the results. This
+version can be seen in calcipi2.go
 
 * The go implementation was considerably faster however I have not
 yet optimized the Java setup to allow for warming up. Go requires
