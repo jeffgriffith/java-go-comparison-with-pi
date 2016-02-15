@@ -27,7 +27,7 @@ a separate channel for each result in the way that Java returns
 a separate future for each result. In Go, using a fan-in pattern,
 several workers can contribute to the same output channel with a
 single consumer reading the channel and summing the results. This
-version can be seen in calcipi2.go
+version can be seen in calcpi2.go
 
 * The go implementation was considerably faster however I have not
 yet optimized the Java setup to allow for warming up. Go requires
