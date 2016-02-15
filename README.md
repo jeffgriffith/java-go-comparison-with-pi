@@ -34,12 +34,36 @@ yet optimized the Java setup to allow for warming up. Go requires
 no such special treatment and ran nearly twice as fast out of the box.
 
 * * *
+Here is the equation for estimating PI. This allows us to break
+the summation into arbitrary ranges and farm out the ranges to
+several works to be done in parallel. The result of all of the
+workers can then be summed for a final estimation of PI.
+
 ![EstimatingPI](images/0-EstimatingPI.jpg "Approsimation for PI")
 * * *
+This function executes an estimation for the given range asynchronously.
+
 ![CalculatePiForTerms](images/1-CalcPiForTerms.jpg "Calculate for pi")
 * * *
+
+Create all the workers and aggregate the results. Again, the result
+is produced asynchronously.
+
 ![ManyWorkers](images/2-ManyWorkers.jpg "Many workers")
 * * *
+The main program. Note that in calculating 10 billion terms,
+there is no doubt some over flow that limits the precision of the
+answer (to about 10 decimal points i think) but I don't think this
+matters in terms in terms of the calculation.
+
+Note that the main contains the synchronization point for both
+implementations. The Java version blocks on the future calculation
+result with a "join()" call where the Go main blocks on reading
+from the output channel calling calculatePi.
+
+
 ![Main](images/3-Main.jpg "Main")
 * * *
+This kind of speaks for itself. Maybe I will rewrite a Java version
+without the helpers for a fair comparison.
 ![Readability](images/4-Readability.jpg "Readability")
