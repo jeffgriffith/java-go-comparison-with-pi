@@ -36,7 +36,7 @@ no such special treatment and ran nearly twice as fast out of the box.
 * * *
 Here is the equation for estimating PI. This allows us to break
 the summation into arbitrary ranges and farm out the ranges to
-several workers to be done in parallel. The result of all of the
+several workers to be done concurrently. The result of all of the
 workers can then be summed for a final estimation of PI.
 
 ![EstimatingPI](images/0-EstimatingPI.jpg "Approsimation for PI")
