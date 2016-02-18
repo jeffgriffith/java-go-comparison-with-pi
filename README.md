@@ -29,10 +29,6 @@ several workers can contribute to the same output channel with a
 single consumer reading the channel and summing the results. This
 version can be seen in calcpi2.go
 
-* The go implementation was considerably faster however I have not
-yet optimized the Java setup to allow for warming up. Go requires
-no such special treatment and ran nearly twice as fast out of the box.
-
 * * *
 Here is the equation for estimating PI. This allows us to break
 the summation into arbitrary ranges and farm out the ranges to
