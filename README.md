@@ -69,7 +69,9 @@ all terms have been produced. On the go side however, the sum is
 running inside a go routine. This allows the go routine to be parked
 when it reads from the channel at "sum += <- c" allowing for asynchrony
 in code that LOOKS synchronous. While innocuous looking, THIS IS THE
-POWER OF GO and of core.async if you are familiar with Clojure.
+POWER OF GO and of core.async if you are familiar with Clojure. It is
+also a difference between the CompletableFuture and RxJava Observables
+which can produce multiple values similar to Go/core.async.
 
 
 ![Readability](images/4-Readability.jpg "Readability")
