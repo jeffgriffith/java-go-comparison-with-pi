@@ -14,7 +14,7 @@ that would allow such composition as well.
 * The flip side of the observation above is that using a single channel
 for a single result is a special case for channels and does not
 remotely reflect its power. CompletableFutures are not intended to solve
-this. Channels therefore possess both the power of the actor model
+this. Channels therefore possess both the power of the 'reactive extensions' model
 AND the simplicity of futures in one very simple abstraction.
 
 * I cheated considerably with helper fucntions to make the Java 8 look
